@@ -1,6 +1,35 @@
 var args = process.argv.slice(2);
 
+// function takes a string, joins the words of the string and sets all characters
+// to lower case, returns an object with individual characters in the given string
+// set as keys, and the key values set as how many instances that character
+// appears in the entire string.
 function countLetters(string) {
+  string = string.join('').toLowerCase();
+  var charCount = {};
+  for (var i = 0; i < string.length; i++) {
+    var letter = string[i];
+    if (charCount[letter]) {
+     charCount[letter]++;
+    } else {
+      charCount[letter] = 1;
+    }
+  }
+  return charCount;
+
+};
+
+console.log(countLetters(args));
+
+var args = process.argv.slice(2);
+
+// ORIGINAL vvvvv EDITED ABOVE ^^^^
+
+// function takes a string, joins the words of the string and sets all characters
+// to lower case, returns an object with individual characters in the given string
+// set as keys, and the key values set as how many instances that character
+// appears in the entire string.
+/*function countLetters(string) {
   string = string.join('').toLowerCase();
   var charCount = {};
   charCount[string[0]] = 1;
@@ -18,4 +47,4 @@ function countLetters(string) {
 
 };
 
-console.log(countLetters(args));
+console.log(countLetters(args));*/
